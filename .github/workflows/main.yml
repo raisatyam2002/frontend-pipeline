@@ -29,23 +29,23 @@ jobs:
         run: npm test
 
   cd:
-    needs: ci
-    runs-on: ubuntu-latest
-    if: ${{ success() }}
+  needs: ci
+  runs-on: ubuntu-latest
+  if: ${{ success() }}
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+  steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
 
-      - name: Install Vercel CLI
-        run: npm install -g vercel
+    - name: Install Vercel CLI
+      run: npm install -g vercel
 
-      - name: Deploy to Vercel
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-        run: vercel --prod --token=$VERCEL_TOKEN
+    - name: Deploy to Vercel
+      env:
+        VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      run: vercel --prod --token=$VERCEL_TOKEN
