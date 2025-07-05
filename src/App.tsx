@@ -15,7 +15,6 @@ const moods: Mood[] = [
   { emoji: "😐", label: "Neutral" },
   { emoji: "😢", label: "Sad" },
   { emoji: "🤩", label: "Excited" },
-  { emoji: "😠", label: "Angry" },
 ];
 
 export default function App() {
