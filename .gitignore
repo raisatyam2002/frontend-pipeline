@@ -27,3 +27,4 @@ dist
 .vite
 .husky/_/
 .env
+.vercel
